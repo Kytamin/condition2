@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6</title>
+</head>
+<body>
+<div><input id="inputa" type="text" style="width: 20px">X+<input id="inputb" type="text" style="width:20px">=0 &nbsp<input onclick="handle()" type="button" value="giải PT"></div><br>
+<div id="result"></div>
+
+</body>
+<script>
+    function handle(){
+        let a=+document.getElementById("inputa").value
+        let b=+document.getElementById("inputb").value
+        x=(-b/a)
+        if(a===0){
+            document.getElementById("result").innerHTML="vô nghiệm"
+        }else {
+            document.getElementById("result").innerHTML=`pt có nghiệm x=${x}`
+        }
+    }
+</script>
+</html>

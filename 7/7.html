@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7</title>
+</head>
+<body>
+<div><p>Giải Phương trình bậc 2</p></div>
+<div><input id="numbera" type="text" style="width: 20px">X<sup>2</sup>+
+    <input id="numberb" type="text" style="width: 20px">X+<input id="numberc" type="text" style="width: 20px">=0&nbsp
+    <input type="button" value=" giải pt" onclick="handleX()">
+</div>
+<div> <h4 id="result"></h4></div>
+</body>
+<script>
+function handleX(){
+    let a=+document.getElementById("numbera").value
+    let b=+document.getElementById("numberb").value
+    let c=+document.getElementById("numberc").value
+    let delta=(b*b)-(4*a*c)
+    if((a===0&&b===0&&c===0)||(a===0&b===0)){
+        document.getElementById("result").innerHTML=`Xác định lại thuộc tính cho a,b va c`
+    }else if (a===0){
+        x=(-c/b)
+        document.getElementById("result").innerHTML=`Phương trình có nghiệm x=${x}`
+    }else if(delta===0){
+        x=(-b/2*a)
+        document.getElementById("result").innerHTML=`Phương trình có nghiệm kép X1=X2=${x}`
+    }else if(delta>0){
+        x1=((-b+Math.sqrt(delta))/2*a)
+        x2=((-b-Math.sqrt(delta))/2*a)
+        document.getElementById("result").innerHTML=`Phươn trình có 2 nghiệm riêng biệt x1=${x1} và x2=${x2}`
+    }else {
+        document.getElementById("result").innerHTML=`phương trình vô nghiệm`
+    }
+
+}
+</script>
+</html>

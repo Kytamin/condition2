@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11</title>
+</head>
+<body>
+
+</body>
+<script>
+    let salary=+prompt("thu nhập VND")
+    if(salary<=5000000){
+        IncomeTax=(salary*5)/100
+    }else if(salary>=5000000&&salary<=10000000){
+        IncomeTax=(salary*10)/100-250000
+    }else if(salary>=10000000&&salary<=18000000){
+        IncomeTax=(salary*15)/100-750000
+    }else if(salary>=18000000&&salary<=32000000){
+        IncomeTax=(salary*20)/100-1650000
+    }else if(salary>=32000000&&salary<=52000000){
+        IncomeTax=(salary*25)/100-3250000
+    }else if(salary>=52000000&&salary<=80000000){
+        IncomeTax=(salary*30)/100-5850000
+    }else if(salary>80000000){
+        IncomeTax=(salary*35)/100-9850000
+    }
+    alert(`Thuế thu nhập ${IncomeTax.toLocaleString()} VND`)
+</script>
+</html>

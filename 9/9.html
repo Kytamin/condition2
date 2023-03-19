@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>nhập độ dài cạnh a: <input id="inputa" type="text" style="width: 50px"></div><br>
+<div>nhập độ dài cạnh b: <input id="inputb" type="text" style="width: 50px"></div><br>
+<div>nhập độ dài cạnh c: <input id="inputc" type="text" style="width: 50px"></div><br>
+<div><input type="button" value="Kiểm tra" onclick="checking()"></div>
+<div><p id="result"></p></div>
+
+</body>
+<script>
+    function checking(){
+        let a=+document.getElementById("inputa").value
+        let b=+document.getElementById("inputb").value
+        let c=+document.getElementById("inputc").value
+        if(a===0||b===0||c===0){
+            document.getElementById("result").innerHTML=` không phải tam giác`
+        }else if (a===b&&a===c&&b===c){
+            document.getElementById("result").innerHTML=`tam giác đều`
+        }else if (a*a+b*b===c*c||a*a+c*c===b*b||b*b+c*c===a*a){
+            document.getElementById("result").innerHTML=` tam giác vuông`
+        }else if (((a+b)<=c || (a+c)<=b || (b+c)<=a)){
+            document.getElementById("result").innerHTML=`không phải là tam giác`
+        }else if((a===b && (a+b)>c)||(a===c && (a+c)>b)||(b===c && (b+c)>a)){
+            document.getElementById("result").innerHTML="tam giác cân"
+        }else {
+            document.getElementById("result").innerHTML="tam giác thường"
+        }
+    }
+
+
+
+
+</script>
+</html>
